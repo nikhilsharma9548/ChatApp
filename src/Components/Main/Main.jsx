@@ -17,7 +17,7 @@ const Main = () => {
   return (
 
     <>
-        <div className='w-full  bg-gradient-to-r from-[#1E1E1E] to-[#121212]  text-white'>
+        <div className='w-full h-[100%] bg-gradient-to-r from-[#1E1E1E] to-[#121212]  text-white'>
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
                 <p>ChatBot</p>
                 <p><FaRegUser /></p>
