@@ -24,7 +24,7 @@ const SideBar = () => {
 
   return (
     <> 
-        <div className={` px-2 w-12  flex flex-col justify-between text-white ${!extended ? " sm:border-r-2  bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}>
+        <div className={` px-2 flex flex-col justify-between text-white ${!extended ? " sm:border-r-2  bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}>
          <div >
            <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
 
@@ -56,7 +56,7 @@ const SideBar = () => {
          }      
          </div>
           {/* bottom */}
-          <div className={`flex flex-col gap-3 border-t-2  ${!extended ? " border-none": "p-5"}`}>
+          <div className={`flex flex-col gap-3 border-t-2 pb-8 md:pb-4 ${!extended ? " border-none": "p-5"}`}>
             <div className="flex items-center gap-3 cursor-pointer">
                   <p className='text-2xl'><HiOutlineQuestionMarkCircle /></p>
                   {extended ? <p className='text-xl'>help</p>:null}

@@ -17,7 +17,7 @@ const Main = () => {
   return (
 
     <>
-        <div className='w-full bg-gradient-to-r from-[#1E1E1E] to-[#121212]  text-white'>
+        <div className='w-full  bg-gradient-to-r from-[#1E1E1E] to-[#121212]  text-white'>
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
                 <p>ChatBot</p>
                 <p><FaRegUser /></p>
@@ -51,7 +51,7 @@ const Main = () => {
             {/* bottom field  */}
 
             <div className='w-full flex flex-col justify-center pb-20 items-center h-[20%]'>
-                <div className='md:text-2xl text-lg flex w-[90%] md:w-[60%] bg-gray-500/50  rounded-full'>
+                <div className='md:text-2xl text-lg flex w-[97%] md:w-[60%] bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
                     onChange={(e) =>setInput(e.target.value)}
