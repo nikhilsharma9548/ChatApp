@@ -6,7 +6,7 @@ import Main from './Components/Main/Main'
 const App = () => {
   return (
     <>
-      <div className='overflow-y-hidden flex min-w-full h-screen'>
+      <div className='overflow-y-hidden flex min-w-full min-h-screen'>
         <SideBar />
       <Main />
       </div>

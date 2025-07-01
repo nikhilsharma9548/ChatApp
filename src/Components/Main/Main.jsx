@@ -67,52 +67,6 @@ const Main = () => {
            
         </div>
     </>
-    // <div className='w-full'>
-    //     <div className=" nav flex justify-between text-2xl p-5">
-    //         <p>ChatBot</p>
-    //         <p><FaRegUser /></p>
-    //     </div>
-    //     <div className="main-container ">   
-
-    //             {!showResult ? (
-    //                      <div className="greet text-6xl flex justify-center items-center">
-    //          <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
-    //          <p>How can I help you Today?</p>
-    //        </div>
-    //             ): <div className="result flex justify-start w-full">
-    //                 <img src={assets.user_icon} alt="" className='rounded-full'/>         
-                    // {loading ?(
-                    //     <div className='loader'>
-                    //             <hr />
-                    //             <hr />
-                    //             <hr />
-                    //     </div>
-                    // ):(<p dangerouslySetInnerHTML={{ __html: resultData || "No data" }} 
-                    // className=' bg-gray-500'
-                    // ></p>
-
-
-                    // )}
-    //             </div>
-    //             }
-          
-    
-    //     <div className="main-bottom  ">
-    //         <div className="search-box text-2xl flex bg-gray-500/50">
-    //             <input type="text"
-    //             onChange={(e) =>setInput(e.target.value)}
-    //             className='bg-transparent border-none p-5 outline-none'
-    //             value={input}
-    //             placeholder='Ask anything'/>
-    //             <div className='flex gap-3'>
-    //                 <img src={assets.gallery_icon} alt="" className='w-10'/>
-    //                 <p><IoMicSharp /></p>
-    //                 <p onClick={() =>{onSent();}} ><IoSendSharp /></p>
-    //             </div>
-    //         </div>
-    //     </div>
-    //     </div>
-    // </div>
   )
 }
 
