@@ -50,7 +50,7 @@ const Main = () => {
 
             {/* bottom field  */}
 
-            <div className='w-full flex flex-col justify-center pb-20 items-center h-[20%]'>
+            <div className='w-full flex sticky flex-col justify-center pb-20 items-center h-[20%]'>
                 <div className='md:text-2xl text-lg flex w-[97%] md:w-[60%] bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
