@@ -5,7 +5,7 @@ import runGemini from "../config/gemini";
 export const Context = createContext();
 
 const ContextPrivider = (props) => {
-
+    const [extended, setExtented] = useState(false);
     const[input, setInput] = useState("");//taing data from input bar
     const[resultData, setResultData] = useState("");
     const[showResult, setShowresult] = useState(false);
@@ -69,6 +69,8 @@ const ContextPrivider = (props) => {
        
         // setPrevPrompt,
         onSent,
+        extended,
+        setExtented,
         setRecentPrompt,
         recentPrompt,
         showResult,

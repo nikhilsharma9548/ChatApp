@@ -1,23 +1,34 @@
-import React, { useContext } from 'react'
-// import './Main.css'
+import React, { useContext, useState } from 'react'
+import { FiSidebar } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { IoMicSharp } from "react-icons/io5";
 import { IoSendSharp } from "react-icons/io5";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
 import { FaMailchimp } from "react-icons/fa6";
 import { Context } from '../Context/Context';
+import SideBar from './SideBar';
+import { div } from 'framer-motion/client';
 
 const Main = () => {
 
-    const{onSent,resultData,showResult,setInput,input,loading}= useContext(Context)
-    console.log("ResultData: ", resultData);
+    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented}= useContext(Context)
+
+    // console.log("ResultData: ", resultData);
+
+     const toggleSilder = () =>{
+      setExtented(!extended);
+    }
 
   return (
 
-    <>
+    <>        
         <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'>
+            
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
-                <p>ChatBot</p>
+                
+                <p className='flex items-center gap-3'>
+                  <FiSidebar className='sm:hidden' onClick={toggleSilder}/>
+                  ChatBot</p>
                 <p><FaRegUser /></p>
             </div>
              <div className='flex-1 overflow-y-auto max-h-[calc(100vh-30vh)] hide-scrollbar'>
@@ -46,7 +57,7 @@ const Main = () => {
             {/* bottom field  */}
 
             <div className='w-full flex  flex-col pb-12 items-center'>
-                <div className='md:text-2xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
+                <div className='md:text-xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
                     onKeyDown={(e) => {
@@ -57,7 +68,10 @@ const Main = () => {
                     className='bg-transparent  border-none p-3 outline-none w-full' />
                     <p  className='flex justify-center items-center pr-4 cursor-pointer'><MdPhotoSizeSelectActual /></p>
                      <p className='flex justify-center items-center pr-4 cursor-pointer'><IoMicSharp /></p>
-                      <p onClick={() =>{onSent();}} 
+                      <p onClick={() =>{
+                        if(input.trim() !== ""){
+                            onSent();
+                        }}} 
                         className='flex justify-center items-center pr-5 cursor-pointer'><IoSendSharp /></p>
                 </div>
             </div>
