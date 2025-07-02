@@ -6,7 +6,7 @@ export const Context = createContext();
 
 const ContextPrivider = (props) => {
     const [extended, setExtented] = useState(false);
-    const[input, setInput] = useState("");//taing data from input bar
+    const[input, setInput] = useState("");//taking data from input bar
     const[resultData, setResultData] = useState("");
     const[showResult, setShowresult] = useState(false);
     const[recentPrompt, setRecentPrompt] = useState("");
@@ -28,6 +28,7 @@ const ContextPrivider = (props) => {
         setResultData("");
         setLoading(true)
         setShowresult(true)
+        setRecentPrompt(input)
         let result;
         if(prompt !== undefined){
             result = await runGemini(prompt);
@@ -67,7 +68,6 @@ const ContextPrivider = (props) => {
 
     const contextValue = {
        
-        // setPrevPrompt,
         onSent,
         extended,
         setExtented,

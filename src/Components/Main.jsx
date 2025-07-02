@@ -11,9 +11,7 @@ import { div } from 'framer-motion/client';
 
 const Main = () => {
 
-    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented}= useContext(Context)
-
-    // console.log("ResultData: ", resultData);
+    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,setRecentPrompt,recentPrompt}= useContext(Context)
 
      const toggleSilder = () =>{
       setExtented(!extended);
@@ -22,14 +20,15 @@ const Main = () => {
   return (
 
     <>        
-        <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'>
+        <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'
+        >
             
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
                 
-                <p className='flex items-center gap-3'>
+                <p className='flex items-center gap-3 max-sm:text-base'>
                   <FiSidebar className='sm:hidden' onClick={toggleSilder}/>
                   ChatBot</p>
-                <p><FaRegUser /></p>
+                <p className='p-2 text-sm md:text-lg pt-1.5 border rounded-full'><FaRegUser /></p>
             </div>
              <div className='flex-1 overflow-y-auto max-h-[calc(100vh-30vh)] hide-scrollbar'>
                 {! showResult ? (
@@ -38,17 +37,23 @@ const Main = () => {
                         <p>How can I help you Today?</p>
                     </div>
                 ):
-                <div className='md:px-32 px-5 py-10 flex gap-3'>
-                    <p className=' text-2xl'><FaMailchimp /></p>
+                <div className='md:px-32 flex-col px-5 py-10 flex gap-7'>
+                        <div className='flex md:pr-20 gap-3 justify-end '>  
+                            <p className='bg-gray-700/30 rounded px-3 py-1.5'>{recentPrompt}</p>
+                            <p className=' p-2.5 text-base'><FaRegUser /></p>
+                        </div>
                                      {loading ?(
-                        <div className='h-3 w-3 flex gap-3 pt-1.5'>
+                        <div className='h-3 w-3 flex gap-3 pt-1.5'>        
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
                         </div>
-                    ):(<p dangerouslySetInnerHTML={{ __html: resultData || "No data" }} 
-                    className=''
-                    ></p>
+                    ):(
+                    <div className='flex gap-3 '>
+                         <p className=' md:text-2xl text-xl'><FaMailchimp /></p>
+                        <p dangerouslySetInnerHTML={{ __html: resultData || "No data" }}
+                        ></p>
+                    </div>
                     )}
                 </div>
                 }

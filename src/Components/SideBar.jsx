@@ -24,15 +24,16 @@ const SideBar = () => {
 
   return (
     <> 
-        <div className={` max-sm:hidden px-2 flex flex-col justify-between text-white ${!extended ? "sm:border-r-2 w-14 bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}> <div >
+        <div className={` max-md:hidden px-2 flex flex-col justify-between text-white ${!extended ? "sm:border-r-2 w-14 bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}> <div >
            <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
 
                   {extended ?
          <div className={`flex  flex-col gap-7 pt-14 `}>
-             <div className='flex flex-col pl-5'>
-                 <div className='flex p-2 gap-2 justify-center w-32 bg-gray-800 rounded-full items-center cursor-pointer'>
+             <div className='flex flex-col  justify-center items-center'>
+                 <div className='flex p-2 gap-2 justify-center  w-32 bg-gray-800  hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer'>
                   <p className='text-xl'><MdAdd /></p>
-                  <p onClick={()=>newChat()}>New Chat</p>
+                  <p onClick={()=>{newChat()
+                  }}>New Chat</p>
                  </div>
                 </div>
         
@@ -41,7 +42,7 @@ const SideBar = () => {
                  <div className='flex flex-col gap-2 overflow-y-auto h-[22rem] hide-scrollbar'>  
                   {prevPrompt.map((item,index) =>{
                     return(
-                      <div className="flex gap-2 cursor-pointer items-center p-2 rounded-full  bg-gray-800" 
+                      <div className="flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full  bg-gray-800" 
                           key={index}
                           onClick={()=>loadPrompt(item)}>
                           <p><FaRegMessage /></p>
@@ -76,14 +77,16 @@ const SideBar = () => {
 
         {/* mobile view */}
          {extended &&(
-           <div className={`md:hidden px-2 flex flex-col justify-between text-white ${!extended ? "sm:border-r-2 w-14 bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}>
+           <div className={`md:hidden w-full px-2 flex flex-col justify-between text-white ${!extended ? "sm:border-r-2  bg-[#1E1E1E]":" bg-[#131111] "}`}>
           <div >
-           <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
+           <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended ? " border-none":"py-[30px]"}`} onClick={toggleSilder}>
+            <FiSidebar className={` ${!extended ?" border-none":"hidden"}`}/>
+            </p>   
 
                   {extended ?
          <div className={`flex  flex-col gap-7 pt-14 `}>
-             <div className='flex flex-col pl-5'>
-                 <div className='flex p-2 gap-2 justify-center w-32 bg-gray-800 rounded-full items-center cursor-pointer'>
+             <div className='flex flex-col justify-center items-center'>
+                 <div className='flex p-2 gap-2 justify-center w-32 bg-gray-800  rounded-full items-center cursor-pointer'>
                   <p className='text-xl'><MdAdd /></p>
                   <p onClick={()=>{newChat()
                     setExtented(false);
