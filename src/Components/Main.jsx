@@ -15,14 +15,14 @@ const Main = () => {
   return (
 
     <>
-        <div className='w-full bg-gradient-to-r flex flex-col from-[#1E1E1E] to-[#121212]  text-white'>
+        <div className='w-full bg-gradient-to-r flex flex-col justify-between from-[#1E1E1E] to-[#121212]  text-white'>
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
                 <p>ChatBot</p>
                 <p><FaRegUser /></p>
             </div>
-             <div className='w-full overflow-y-auto hide-scrollbar flex-1 max-h-[calc(100vh-8rem)]'>
+             <div className=' w-full overflow-y-auto hide-scrollbar'>
                 {! showResult ? (
-                    <div className='flex flex-col text-4xl sm:text-6xl max-sm:px-5 sm:p-36'>
+                    <div className='flex flex-col text-4xl sm:text-6xl max-sm:px-5 max-sm:py-24  sm:p-36'>
                         <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
                         <p>How can I help you Today?</p>
                     </div>
@@ -47,7 +47,7 @@ const Main = () => {
 
             {/* bottom field  */}
 
-            <div className='w-full flex  flex-col justify-end pb-10 items-center flex-1 overflow-y-auto'>
+            <div className='w-full flex  flex-col md:pb-28 pb-40 items-center'>
                 <div className='md:text-2xl text-lg flex w-[90%] md:w-[60%] fixed bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
