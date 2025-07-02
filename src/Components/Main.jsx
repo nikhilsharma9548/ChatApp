@@ -45,7 +45,7 @@ const Main = () => {
 
             {/* bottom field  */}
 
-            <div className='w-full flex  flex-col pb-10 items-center'>
+            <div className='w-full flex  flex-col pb-[env(safe-area-inset-bottom)] md:pb-14 items-center'>
                 <div className='md:text-2xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
