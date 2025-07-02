@@ -21,6 +21,7 @@
 
 
 #root{
+     height: 100%;
     animation: fadeIn 1.5s;
 }
 @keyframes fadeIn {

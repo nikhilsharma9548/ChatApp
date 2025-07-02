@@ -20,17 +20,17 @@ const Main = () => {
                 <p>ChatBot</p>
                 <p><FaRegUser /></p>
             </div>
-             <div className=' w-full flex-1 overflow-y-auto hide-scrollbar'>
+             <div className='flex-1 overflow-y-auto max-h-[calc(100vh-120px)] hide-scrollbar'>
                 {! showResult ? (
-                    <div className='flex flex-col text-4xl sm:text-6xl  sm:p-24'>
+                    <div className='flex flex-col text-4xl sm:text-6xl p-5 sm:p-24'>
                         <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
                         <p>How can I help you Today?</p>
                     </div>
                 ):
-                <div className='md:px-32 px-5 items-center py-10 flex gap-3'>
+                <div className='md:px-32 px-5 py-10 flex gap-3'>
                     <p className=' text-2xl'><FaMailchimp /></p>
                                      {loading ?(
-                        <div className='h-3 w-3 flex gap-3'>
+                        <div className='h-3 w-3 flex gap-3 pt-1.5'>
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
                                <p className='p-1.5 bg-white animate-pulse rounded-full'></p>
@@ -46,7 +46,7 @@ const Main = () => {
             {/* bottom field  */}
 
             <div className='w-full flex  flex-col pb-10 items-center'>
-                <div className='md:text-2xl text-lg flex w-[90%] md:w-[60%] sticky  bg-gray-500/50  rounded-full'>
+                <div className='md:text-2xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
                     <input type="text"
                     value={input}
                     onKeyDown={(e) => {
