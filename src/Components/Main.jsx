@@ -20,7 +20,7 @@ const Main = () => {
                 <p>ChatBot</p>
                 <p><FaRegUser /></p>
             </div>
-             <div className='flex-1 overflow-y-auto max-h-[calc(100vh-10vh)] hide-scrollbar'>
+             <div className='flex-1 overflow-y-auto max-h-[calc(100vh-30vh)] hide-scrollbar'>
                 {! showResult ? (
                     <div className='flex flex-col text-4xl sm:text-6xl p-5 sm:p-24'>
                         <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
