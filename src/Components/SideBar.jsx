@@ -6,7 +6,7 @@ import { IoMdSettings } from "react-icons/io";
 import { IoIosTimer } from "react-icons/io";
 import { FaRegMessage } from "react-icons/fa6";
 import { MdAdd } from "react-icons/md";
-import { Context } from '../../Context/Context';
+import { Context } from '../Context/Context';
 
 
 const SideBar = () => {
@@ -24,7 +24,7 @@ const SideBar = () => {
 
   return (
     <> 
-        <div className={` px-2 flex flex-col justify-between text-white ${!extended ? " sm:border-r-2  bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}>
+        <div className={`max-sm:hidden px-2 flex flex-col justify-between text-white ${!extended ? " sm:border-r-2 w-14 bg-[#1E1E1E]":" bg-[#131111] md:w-80 w-96"}`}>
          <div >
            <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
 

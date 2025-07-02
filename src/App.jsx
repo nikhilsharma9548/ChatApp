@@ -1,13 +1,16 @@
 import React from 'react'
 import './index.css';
-import SideBar from './Components/SideBar/Sidebar';
-import Main from './Components/Main/Main'
+// import SideBar from './Components/SideBar/Sidebar';
+import SideBar from './Components/SideBar'
+import Main from './Components/Main';
+// import Main from './Components/Main/Main'
 
 const App = () => {
   return (
     <>
-      <div className='overflow-y-hidden flex min-w-full min-h-screen'>
+      <div className='overflow-hidden flex min-w-full h-screen'>
         <SideBar />
+        {/* <SideBar /> */}
       <Main />
       </div>
     </>
