@@ -8,7 +8,7 @@ import Main from './Components/Main';
 const App = () => {
   return (
     <>
-      <div className='overflow-hidden flex min-w-full md:h-[100dvh] h-[100dvh]'>
+      <div className='overflow-hidden bg-black flex min-w-full md:h-[100dvh] h-[100dvh]'>
         <SideBar />
         {/* <SideBar /> */}
       <Main />

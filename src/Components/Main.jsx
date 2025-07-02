@@ -20,13 +20,14 @@ const Main = () => {
   return (
 
     <>        
+        
         <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'
         >
             
             <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
                 
-                <p className='flex items-center gap-3 max-sm:text-base'>
-                  <FiSidebar className='sm:hidden' onClick={toggleSilder}/>
+                <p className='flex items-center gap-3 max-sm:text-xl'>
+                  <FiSidebar className='md:hidden text-2xl' onClick={toggleSilder}/>
                   ChatBot</p>
                 <p className='p-2 text-sm md:text-lg pt-1.5 border rounded-full'><FaRegUser /></p>
             </div>
