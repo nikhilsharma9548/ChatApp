@@ -22,7 +22,7 @@ const Main = () => {
             </div>
              <div className=' w-full overflow-y-auto hide-scrollbar'>
                 {! showResult ? (
-                    <div className='flex flex-col text-4xl sm:text-6xl max-sm:px-5 max-sm:py-24  sm:p-36'>
+                    <div className='flex flex-col text-4xl sm:text-6xl max-sm:px-5  sm:p-36'>
                         <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
                         <p>How can I help you Today?</p>
                     </div>
