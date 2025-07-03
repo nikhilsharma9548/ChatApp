@@ -24,16 +24,16 @@ const Main = () => {
         <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'
         >
             
-            <div className="md:px-10 px-3 py-5 text-2xl flex items-center  justify-between">
+            <div className="md:px-10 py-5 text-2xl flex items-center  justify-between">
                 
-                <p className='flex items-center gap-3 max-sm:text-xl'>
+                <p className='flex p-1.5 items-center gap-3 max-sm:text-xl'>
                   <FiSidebar className='md:hidden text-2xl' onClick={toggleSilder}/>
                   ChatBot</p>
-                <p className='p-2 text-sm md:text-lg pt-1.5 border rounded-full'><FaRegUser /></p>
+                <p className='p-2 mx-5 text-sm md:text-lg pt-1.5 border rounded-full'><FaRegUser /></p>
             </div>
              <div className='flex-1 overflow-y-auto max-h-[calc(100vh-30vh)] hide-scrollbar'>
                 {! showResult ? (
-                    <div className='flex flex-col text-4xl sm:text-6xl p-5 sm:p-24'>
+                    <div className='flex flex-col text-4xl sm:text-6xl p-2 sm:p-24'>
                         <p><span className='bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent'>hello, there</span></p>
                         <p>How can I help you Today?</p>
                     </div>
