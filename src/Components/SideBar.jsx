@@ -40,7 +40,7 @@ const SideBar = () => {
         
               <div>
                     <p className='text-xl pb-5 pl-2'>Recent</p>
-                 <div className='flex flex-col gap-2 overflow-y-auto h-[22rem] hide-scrollbar'>  
+                 <div className='flex flex-col gap-2 overflow-y-auto px-5 h-[22rem] hide-scrollbar'>  
                     {prevPrompt.map((item,index) =>{
                       return(
                         <div className="flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full  bg-gray-800" 
@@ -98,7 +98,10 @@ const SideBar = () => {
                     return(
                       <div className="flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full  bg-gray-800" 
                           key={index}
-                          onClick={()=>loadPrompt(item)}>
+                          onClick={()=>{
+                            loadPrompt(item);
+                            setExtented(false);
+                          }}>
                           <p><FaRegMessage /></p>
                           <p>{item.slice(0,18)}...</p>
                       </div>

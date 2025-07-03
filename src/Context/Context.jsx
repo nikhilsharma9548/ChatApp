@@ -25,6 +25,7 @@ const ContextPrivider = (props) => {
     }
 
     const onSent = async(prompt) =>{
+        setInput("");
         setResultData("");
         setLoading(true)
         setShowresult(true)
