@@ -56,8 +56,8 @@ const SideBar = () => {
             } 
           {/* bottom */}
 
-          <div className={`flex flex-col gap-3 border-t-2 pb-8 md:pb-4 ${!extended ? " border-none": "p-5"}`}>
-              <div className="flex items-center gap-3 cursor-pointer">
+          <div className={`flex flex-col gap-3 border-t-2 pb-4 ${!extended ? " border-none items-center": " p-5"}`}>
+              <div className="flex items-center   gap-3 cursor-pointer">
                     <p className='text-2xl'><HiOutlineQuestionMarkCircle /></p>
                     {extended ? <p className='text-xl'>help</p>:null}
               </div>
@@ -78,7 +78,7 @@ const SideBar = () => {
 
          { extended &&(
 
-          <div className='flex h-screen flex-col justify-between '>
+          <div className='flex md:hidden h-screen flex-col justify-between '>
                 <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-8 ${!extended && "border-none"}`} onClick={toggleSilder}></p>
                   { extended ?
          <div className={`flex flex-col gap-7 pt-14 `}>
@@ -113,10 +113,10 @@ const SideBar = () => {
          } 
           {/* bottom */}
           
-          <div className={`flex flex-col gap-3 border-t-2 pb-8 md:pb-4 ${!extended ? " border-none": "p-5"}`}>
-            <div className="flex items-center gap-3 cursor-pointer">
+          <div className={`flex flex-col gap-3 justify-center border-t-2 pb-8 ${!extended ? " border-none": "p-5"}`}>
+            <div className="flex items-center   gap-3 cursor-pointer">
                   <p className='text-2xl'><HiOutlineQuestionMarkCircle /></p>
-                  {extended ? <p className='text-xl'>help</p>:null}
+                  {extended ? <p className=''>help</p>:null}
             </div>
 
             <div className="flex items-center gap-3 cursor-pointer">

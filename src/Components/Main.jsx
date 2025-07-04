@@ -65,6 +65,7 @@ const Main = () => {
             <div className='w-full flex  flex-col pb-12 items-center'>
                 <div className='md:text-xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
                     <input type="text"
+                    onClick={()=>setExtented(!extended)}
                     value={input}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') onSent();
@@ -73,8 +74,8 @@ const Main = () => {
                     placeholder='Ask anythink.....'
                     className='bg-transparent  border-none p-3 outline-none w-full' />
                     <p  className='flex justify-center items-center pr-4 cursor-pointer'><MdPhotoSizeSelectActual /></p>
-                     <p className='flex justify-center items-center pr-4 cursor-pointer'><IoMicSharp /></p>
-                      <p onClick={() =>{
+                    <p className='flex justify-center items-center pr-4 cursor-pointer'><IoMicSharp /></p>
+                    <p onClick={() =>{
                         if(input.trim() !== ""){
                             onSent();
                         }}} 
