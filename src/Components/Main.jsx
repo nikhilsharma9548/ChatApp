@@ -65,7 +65,7 @@ const Main = () => {
             <div className='w-full flex  flex-col pb-12 items-center'>
                 <div className='md:text-xl text-lg flex w-[90%] md:max-w-[60%] mx-auto sticky  bg-gray-500/50  rounded-full'>
                     <input type="text"
-                    onClick={()=>setExtented(!extended)}
+                    onClick={()=>setExtented(false)}
                     value={input}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') onSent();
