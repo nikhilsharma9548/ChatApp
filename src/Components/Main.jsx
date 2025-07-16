@@ -6,8 +6,6 @@ import { IoSendSharp } from "react-icons/io5";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
 import { FaMailchimp } from "react-icons/fa6";
 import { Context } from '../Context/Context';
-import SideBar from './SideBar';
-import { div } from 'framer-motion/client';
 
 const Main = () => {
 
@@ -40,8 +38,8 @@ const Main = () => {
                 ):
                 <div className='md:px-32 flex-col px-5 py-10 flex gap-7'>
                         <div className='flex md:pr-20 gap-3 justify-end '>  
-                            <p className='bg-gray-700/30 rounded px-3 py-1.5'>{recentPrompt}</p>
-                            <p className=' p-2.5 text-base'><FaRegUser /></p>
+                            <p className='bg-gray-700/30 rounded-xl rounded-br-none px-3 py-1.5'>{recentPrompt}</p>
+                            <p className=' p-[11px] text-sm border rounded-full bg-[#1E1E1E]'><FaRegUser /></p>
                         </div>
                                      {loading ?(
                         <div className='h-3 w-3 flex gap-3 pt-1.5'>        
