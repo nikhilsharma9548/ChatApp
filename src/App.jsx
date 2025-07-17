@@ -1,4 +1,6 @@
 import React from 'react'
+import { useContext } from 'react';
+import { Context } from './Context/Context';
 import './index.css';
 import SideBar from './Components/SideBar'
 import Main from './Components/Main';

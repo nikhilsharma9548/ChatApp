@@ -1,16 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
+import { CiLight } from "react-icons/ci";
+import { FaMoon } from "react-icons/fa6";
 import { FiSidebar } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { IoMicSharp } from "react-icons/io5";
 import { IoSendSharp } from "react-icons/io5";
-import { MdPhotoSizeSelectActual } from "react-icons/md";
+import { MdPhotoSizeSelectActual} from "react-icons/md";
 import { FaMailchimp } from "react-icons/fa6";
 import { Context } from '../Context/Context';
 
 const Main = () => {
 
-    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,setRecentPrompt,recentPrompt}= useContext(Context)
-
+    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,setRecentPrompt,recentPrompt,toggleTheme}= useContext(Context)
      const toggleSilder = () =>{
       setExtented(!extended);
     }
@@ -19,7 +20,7 @@ const Main = () => {
 
     <>        
         
-        <div className='w-full flex flex-col justify-between bg-gradient-to-r  from-[#1E1E1E] to-[#121212]  text-white'
+        <div className='w-full flex flex-col justify-between  text-white'
         >
             
             <div className="md:px-10 py-5 text-2xl flex items-center  justify-between">
@@ -27,8 +28,13 @@ const Main = () => {
                 <p className='flex p-1.5 items-center gap-3 max-sm:text-xl'>
                   <FiSidebar className='md:hidden text-2xl' onClick={toggleSilder}/>
                   ChatBot</p>
+                  <div className='flex  items-center md:gap-3'>
+                <p onClick={toggleTheme}><CiLight/></p>
+                <p><FaMoon className='-rotate-12'/></p>
                 <p className='p-2 mx-5 text-sm md:text-lg pt-1.5 border rounded-full'><FaRegUser /></p>
+                </div>
             </div>
+
              <div className='flex-1 overflow-y-auto max-h-[calc(100vh-30vh)] hide-scrollbar'>
                 {! showResult ? (
                     <div className='flex flex-col text-4xl sm:text-6xl p-2 sm:p-24'>

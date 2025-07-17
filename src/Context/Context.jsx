@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState ,useEffect} from "react";
 import runGemini from "../config/gemini";
 
 export const Context = createContext();
@@ -11,11 +11,12 @@ const ContextPrivider = (props) => {
     const[recentPrompt, setRecentPrompt] = useState("");
     const[prevPrompt, setPrevPrompt] = useState([]);
     const[loading, setLoading] = useState(false);
-    
+ 
+
     const delayPara =(index, nextword) =>{
         setTimeout(function () {
             setResultData(prev=>prev+nextword);
-        },75*index)
+        },50*index)
     }   
 
     const newChat = () =>{
@@ -67,7 +68,6 @@ const ContextPrivider = (props) => {
 
 
     const contextValue = {
-       
         onSent,
         extended,
         setExtented,

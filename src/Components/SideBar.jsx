@@ -24,7 +24,7 @@ const SideBar = () => {
 
   return (
     <> 
-      <div className={` px-2 flex flex-col duration-500 justify-between text-white ${!extended ? "sm:border-r-2 md:w-16 w-px bg-[#1E1E1E]":" bg-[#131111] w-96"}`}>  
+      <div className={` px-2 flex flex-col duration-500 justify-between text-white ${!extended ? "sm:border-r-2 md:w-16 w-px":" bg-[#131111] w-96"}`}>  
           <div className='max-md:hidden flex h-screen flex-col justify-between '>
              <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
 
