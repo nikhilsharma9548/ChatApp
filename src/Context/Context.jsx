@@ -11,6 +11,11 @@ const ContextPrivider = (props) => {
     const[recentPrompt, setRecentPrompt] = useState("");
     const[prevPrompt, setPrevPrompt] = useState([]);
     const[loading, setLoading] = useState(false);
+     const [theme, setTheme] = useState(false);
+    
+            const toggleTheme = () => {
+                setTheme(!theme);}
+    
  
 
     const delayPara =(index, nextword) =>{
@@ -68,6 +73,8 @@ const ContextPrivider = (props) => {
 
 
     const contextValue = {
+        theme,
+        toggleTheme,
         onSent,
         extended,
         setExtented,
