@@ -83,7 +83,7 @@ const SideBar = () => {
                   { extended ?
          <div className={`flex flex-col gap-7 pt-14 `}>
              <div className='flex flex-col  justify-center items-center'>
-                 <div className='flex p-2 gap-2 justify-center  w-32 bg-gray-800  hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer'>
+                 <div className={`${theme ? "bg-gray-800" : "bg-gray-300" } flex p-2 gap-2 justify-center  w-32   hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer`}>
                   <p className='text-xl'><MdAdd /></p>
                   <p onClick={()=>{newChat()
                   setExtented(false)
@@ -96,7 +96,7 @@ const SideBar = () => {
                  <div className='flex flex-col gap-2 overflow-y-auto h-[22rem] hide-scrollbar'>  
                   {prevPrompt.map((item,index) =>{
                     return(
-                      <div className="flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full  bg-gray-800" 
+                      <div className={`${theme ? "bg-gray-800" : "bg-gray-300" } flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full` }
                           key={index}
                           onClick={()=>{
                             loadPrompt(item);
