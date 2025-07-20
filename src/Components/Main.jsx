@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { motion, AnimatePresence} from 'framer-motion';
 import { CiLight } from "react-icons/ci";
 import { FaMoon } from "react-icons/fa6";
 import { FiSidebar } from "react-icons/fi";
@@ -12,11 +13,11 @@ import { Context } from '../Context/Context';
 const Main = () => {
 
        
-    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,setRecentPrompt,recentPrompt, theme, toggleTheme}= useContext(Context)
+    const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,
+         setRecentPrompt,recentPrompt, theme, toggleTheme}= useContext(Context)
      const toggleSilder = () =>{
       setExtented(!extended);
     }
-
   return (
 
     <>        
@@ -28,10 +29,21 @@ const Main = () => {
                 <p className='flex p-1.5 items-center gap-3 max-sm:text-xl'>
                   <FiSidebar className='md:hidden text-2xl' onClick={toggleSilder}/>
                   ChatBot</p>
-                  <div className='flex  items-center md:gap-3'>
-                <div className='flex gap-2 cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out'onClick={toggleTheme}>
+                  <div className='flex  items-center'>
+                <div className={`flex gap-2 border-2  ${!theme ? "bg-gray-700" : "bg-white"} px-3 rounded-full cursor-pointer transition-all duration-300 ease-in-out`}onClick={toggleTheme}>
+                    <AnimatePresence>
                  { !theme ?(
-                        <p><CiLight/></p>):(<p><FaMoon className='-rotate-12'/></p>) }
+                        <motion.div
+                        initial ={{opacity:1 ,x:0}}
+                        animate={{opacity:1,x:-12}}
+                        exit={{opacity:0, x:0}}
+                        className={`text-white text-[1.5rem] p-1  rounded-full`}
+                        ><CiLight/></motion.div>):(<motion.div
+                         initial ={{opacity:1 ,x:0}}
+                        animate={{opacity:1,x:11}}
+                        exit={{opacity:0,x:-20 }}
+                        className=' text-[1.4rem] text-black p-1  rounded-full'
+                        ><FaMoon className='-rotate-12 '/></motion.div>) }</AnimatePresence>
                 </div>
                 <p className={`p-2 mx-5 text-sm md:text-lg pt-1.5 ${theme ? "border" : "border-black"} border rounded-full`}><FaRegUser /></p>
                 </div>
