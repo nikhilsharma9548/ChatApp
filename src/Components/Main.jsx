@@ -11,7 +11,7 @@ import { FaMailchimp } from "react-icons/fa6";
 import { Context } from '../Context/Context';
 
 const Main = () => {
-
+    //main data 
        
     const{onSent,resultData,showResult,setInput,input,loading,extended, setExtented,
          setRecentPrompt,recentPrompt, theme, toggleTheme}= useContext(Context)
