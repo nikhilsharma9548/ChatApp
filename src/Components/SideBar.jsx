@@ -12,7 +12,7 @@ import { Context } from '../Context/Context';
 const SideBar = () => {
 
     
-    const{onSent,prevPrompt,setRecentPrompt,newChat,extended,setExtented,theme} = useContext(Context);
+    const{onSent, prevPrompt, setRecentPrompt, newChat, extended, setExtented } = useContext(Context);
 
     const loadPrompt = async(prompt) =>{
         setRecentPrompt(prompt)
@@ -24,14 +24,14 @@ const SideBar = () => {
 
   return (
     <> 
-      <div className={` px-2 flex flex-col duration-500 justify-between ${theme ? "text-white" : "text-black bg-cyan-50"} ${!extended ? "sm:border-r-2 md:w-16 w-px":" bg-[#131111] w-96"}`}>  
+      <div className={` px-2 flex flex-col duration-500 justify-between text-white ${!extended ? "sm:border-r-2 md:w-16 w-px":" bg-[#131111] w-96"}`}>  
           <div className='max-md:hidden flex h-screen flex-col justify-between '>
              <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-6 ${!extended && "border-none"}`} onClick={toggleSilder}><FiSidebar /></p>   
 
               { extended ?
                 <div className={`flex  flex-col gap-7 pt-14 `}>
                     <div className='flex flex-col  justify-center items-center'>
-                        <div className={`flex p-2 gap-2 justify-center  w-32 ${theme ? "bg-gray-800" : "bg-gray-300" } hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer`}>
+                        <div className={`flex p-2 bg-black gap-2 justify-center  w-32  hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer`}>
                             <p className='text-xl'><MdAdd /></p>
                             <p onClick={()=>{newChat()
                                }}>New Chat</p>
@@ -43,7 +43,7 @@ const SideBar = () => {
                  <div className='flex flex-col gap-2 overflow-y-auto px-5 h-[22rem] hide-scrollbar'>  
                     {prevPrompt.map((item,index) =>{
                       return(
-                        <div className={`flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full  ${theme ? "bg-gray-800" : "bg-gray-300"}` }
+                        <div className={`flex gap-2 cursor-pointer bg-black px-4 hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full` }
                             key={index}
                             onClick={()=>loadPrompt(item)}>
                             <p><FaRegMessage /></p>
@@ -78,12 +78,12 @@ const SideBar = () => {
 
          { extended &&(
 
-          <div className='flex md:hidden h-screen flex-col justify-between '>
+          <div className='flex md:hidden h-full flex-col justify-between '>
                 <p className={`text-2xl cursor-pointer border-b-2 md:py-6 py-8 ${!extended && "border-none"}`} onClick={toggleSilder}></p>
                   { extended ?
          <div className={`flex flex-col gap-7 pt-14 `}>
              <div className='flex flex-col  justify-center items-center'>
-                 <div className={`${theme ? "bg-gray-800" : "bg-gray-300" } flex p-2 gap-2 justify-center  w-32   hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer`}>
+                 <div className={`bg-black flex p-2 gap-2 justify-center w-32 hover:bg-gray-700/80 duration-500 rounded-full items-center cursor-pointer`}>
                   <p className='text-xl'><MdAdd /></p>
                   <p onClick={()=>{newChat()
                   setExtented(false)
@@ -96,7 +96,7 @@ const SideBar = () => {
                  <div className='flex flex-col gap-2 overflow-y-auto h-[22rem] hide-scrollbar'>  
                   {prevPrompt.map((item,index) =>{
                     return(
-                      <div className={`${theme ? "bg-gray-800" : "bg-gray-300" } flex gap-2 cursor-pointer hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full` }
+                      <div className={`flex gap-2 cursor-pointer bg-black px-4 hover:bg-gray-700/80 duration-500 items-center p-2 rounded-full`}
                           key={index}
                           onClick={()=>{
                             loadPrompt(item);

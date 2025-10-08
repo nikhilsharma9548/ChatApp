@@ -6,10 +6,9 @@ import { Context } from './Context/Context';
 
 const App = () => {
   
-  const {theme,} = useContext(Context);
   return (
    
-      <div className={`overflow-hidden text-black bg-black flex min-w-full  md:h-[100dvh] h-[100dvh] ${theme ? '' : 'bg-white text-black'}`}>
+      <div className={`overflow-hidden text-black bg-black flex min-w-full  md:h-[100dvh] h-[100dvh]`}>
       <SideBar />
       <Main />
       </div>
